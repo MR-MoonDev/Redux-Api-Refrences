@@ -5,21 +5,21 @@ export const fetchTodo = createAsyncThunk("fetchTodo", async () => {
   return data.json();
 });
 const todoSlice = createSlice({
-  name: 'todo',
+  name: "todo",
   initialState: {
     isLoading: false,
     data: [],
     error: false,
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchTodo.pending, (state, action) => {
+    builder.addCase(fetchTodo.pending, (state) => {
       state.isLoading = true;
     });
     builder.addCase(fetchTodo.fulfilled, (state, action) => {
       state.isLoading = false;
       state.data = action.payload;
     });
-    builder.addCase(fetchTodo.rejected, (state, action) => {
+    builder.addCase(fetchTodo.rejected, (state) => {
       state.error = true;
     });
   },

@@ -1,9 +1,8 @@
-import Todo from "./Todo"
+import Todo from "./Todo";
 export default function App() {
-
   return (
-    <div >
-    <Todo/>
+    <div>
+      <Todo />
     </div>
-  )
+  );
 }
